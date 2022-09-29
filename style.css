@@ -125,6 +125,16 @@ p {
 
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  top: 22px;
+  right: 32px;
+  font-size: 24px;
+  color:var(--color-white);
+  /* opacity 사용 시 실제로 클릭되서 display:none해야함 */
+  display: none;
+}
+
 /* Home */
 #home {
   background: url('imgs/homebackground.png') center/cover no-repeat;
@@ -443,4 +453,47 @@ p {
   transform: scale(1.1);
   color: var(--color-yellow);
   transition: all var(--animation-duration) ease;
+}
+
+
+/* For below 768px screen width */
+/* MediaQuery안에 들어가는거는 최소한의 것만 */
+/* Style에 관련된것은 밖에다가 작성 */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonials__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
