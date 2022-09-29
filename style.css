@@ -465,6 +465,29 @@ p {
   transition: all var(--animation-duration) ease;
 }
 
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 50px;
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+  /* pointer 되지 않게 */
+  pointer-events: none;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  /* pointer 되도록 */
+  pointer-events: auto;
+}
+
 
 /* For below 768px screen width */
 /* MediaQuery안에 들어가는거는 최소한의 것만 */
