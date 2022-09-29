@@ -20,7 +20,7 @@
     <nav id="navbar">
       <div class="navbar__logo">
         <i class="fa-solid fa-star"></i>
-        <a href="#">Regontornic</a>
+        <a href="/">Regontornic</a>
       </div>
         <ul class="navbar__menu">
           <li class="navbar__menu__item" data-link="#home">Home</li>
@@ -152,13 +152,13 @@
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-          <button class="category_btn">All <span class="category__count">3</span></button>
-          <button class="category_btn">Front-end <span class="category__count">3</span></button>
-          <button class="category_btn">Back-end <span class="category__count">3</span></button>
-          <button class="category_btn">Mobile <span class="category__count">3</span></button>
+          <button class="category_btn" data-filter="*">All <span class="category__count">3</span></button>
+          <button class="category_btn" data-filter="front-end">Front-end <span class="category__count">3</span></button>
+          <button class="category_btn" data-filter="back-end">Back-end <span class="category__count">3</span></button>
+          <button class="category_btn" data-filter="mobile">Mobile <span class="category__count">3</span></button>
         </div>
         <div class="work__projects">
-          <a href="" class="project" target="_blank">
+          <a href="" class="project" target="_blank" data-type="front-end">
             <img class="project__img" src="imgs/projects/familyhealth_iphone2-removebg-preview.png" alt="familyhealth">
             <div class="project__description">
               <h3>가문의 건강</h3>

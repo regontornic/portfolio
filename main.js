@@ -52,6 +52,33 @@ arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const proejctContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener('click', (e) => {
+  // 숫자 버튼 누르면 filter 값이 undefined이기 때문에...
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if(filter == null) {
+    return;
+  }
+
+  proejctContainer.classList.add('anim-out');
+  setTimeout(() => {
+    projects.forEach((project) => {
+      const type = project.dataset.type;
+      if(filter === '*' || filter === type) {
+        project.classList.remove('invisible');
+      } else {
+        project.classList.add('invisible');
+      }
+    });
+    proejctContainer.classList.remove('anim-out');
+  }, 300);
+
+});
+
+
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
