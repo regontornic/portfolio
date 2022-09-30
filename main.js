@@ -3,6 +3,7 @@
 
 
 // Make navbar transparent when it its on the top
+// 제일 top에 있으면 navbar 투명화
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
@@ -14,6 +15,7 @@ document.addEventListener('scroll', () => {
 });
 
 // Handle scrolling when tapping on the navbar menu
+// navbar menu 탭 시 스크롤
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
   const target = event.target;
@@ -26,12 +28,14 @@ navbarMenu.addEventListener('click', (event) => {
 });
 
 // Navbar toggle button for small screen
+// 작은 화면에서 Navbar toggle
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
 
 // Handle click on "contact me" button on home
+// 
 const hoemContactBtn = document.querySelector('.home__contact');
 hoemContactBtn.addEventListener('click', () => {
   scrollIntoView('#contact');
@@ -71,7 +75,7 @@ workBtnContainer.addEventListener('click', (e) => {
   }
 
   // Remove selection from the previous item and select the new one
-  const active = document.querySelector('.category_btn.selected');
+  const active = document.querySelector('.category__btn.selected');
   active.classList.remove('selected');
   // 클릭된 것이 Button이면 e.target을 쓰고 아니면 parentNode를 쓴다.
   const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
